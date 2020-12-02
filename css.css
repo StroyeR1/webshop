@@ -1,0 +1,21 @@
+
+.tales 
+{
+  width: 100%;
+}
+.carousel
+{
+  width:800px;
+  max-height: 800px ;
+  margin:auto;
+}
+
+#kinalat
+{
+	margin: 0 auto;
+}
+
+figcaption 
+{
+	text-align: center;
+}

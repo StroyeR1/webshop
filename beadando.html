@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+<meta charset="utf-8">
+<title>Bolt</title>
+<script src="java.js"></script>
+<link href="css.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item"><a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Kezdőlap</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Fényképezőgépek</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Lencsék</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="kep1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="kep2.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="kep3.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div></div>
+<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+	<table id="kinalat">
+			<tr>
+				<td>
+					<figure>
+						<img src="nikon1.jpg">
+							<figcaption>
+								<p>Nikon D7500 - 364700 Ft</p>
+								<button type="button" class="btn btn-success" onclick="kosarba_rak('D7500')">+</button>
+								<button type="button" class="btn btn-danger"  onclick="kosarbol_elvesz('D7500')">-</button>								
+							</figcaption>
+					</figure>
+				</td>
+				
+				<td>
+					<figure>
+						<img src="nikon2.jpg">
+							<figcaption>
+								<p>Nikon Z7 - 1021700 Ft</p>
+								<button type="button" class="btn btn-success" onclick="kosarba_rak('Z7')">+</button>
+								<button type="button" class="btn btn-danger"  onclick="kosarbol_elvesz('Z7')">-</button>
+						</figcaption>
+					</figure>
+				</td>
+				
+				<td>
+					<figure>
+						<img src="nikon3.jpg">
+							<figcaption>
+								<p>Nikon D5600 - 284900 Ft</p>
+								<button type="button" class="btn btn-success" onclick="kosarba_rak('D5600')">+</button>
+								<button type="button" class="btn btn-danger"  onclick="kosarbol_elvesz('D5600')">-</button>
+							</figcaption>
+						</figure>
+				</td>
+				
+				<td>
+					<figure>
+						<img src="nikon4.jpg">
+							<figcaption>
+								<p>Nikon D750 - 591000 Ft</p>
+								<button type="button" class="btn btn-success" onclick="kosarba_rak('D750')">+</button>
+								<button type="button" class="btn btn-danger"  onclick="kosarbol_elvesz('D750')">-</button>
+							</figcaption>
+						</figure>
+				</td>
+			</tr>
+	</table>
+	
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <h6 class="card-subtitle mb-2 text-muted">A kosár értéke</h6>
+  <h4 class="card-title" id="kosar">0 Ft</h4></div></div>
+  
+  <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Készülék</th>
+      <th scope="col">Kosárban</th>
+      <th scope="col">Raktáron</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Nikon D7500</th>
+	  <td id="D7500_Kosar">0 db</td>
+      <td id="D7500_Raktar">20 db</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Nikon Z7</th>
+	   <td id="Z7_Kosar">0 db</td>
+       <td id="Z7_Raktar">30 db</td>
+     
+      
+    </tr>
+    <tr>
+      <th scope="row">Nikon D5600</th>
+	  <td id="D5600_Kosar">0 db</td>
+      <td id="D5600_Raktar">43 db</td>
+      
+    </tr>
+	<tr>
+      <th scope="row">Nikon D750</th>
+      <td id="D750_Kosar">0 db</td>
+      <td id="D750_Raktar">12 db</td>
+    </tr>
+  </tbody>
+</table>
+    
+   
+  
+</div>
+	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Munkálatok alatt..</div>
+</div>
+
+</body>
+</html>
